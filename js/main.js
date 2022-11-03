@@ -1,17 +1,39 @@
 //default behavior
+//creazione primi 16 numeri
+
+let bombs=[];
+for (let index = 0; index < 16; index++) {
+    let isIn=true
+    while(isIn){
+        let randomNum=parseInt(Math.random()*(100-1)+1);
+        if(bombs.includes(randomNum)){
+            isIn=true;
+        }else{
+            bombs.push(randomNum);
+            console.log(randomNum);
+            isIn=false;
+        }   
+    }    
+}
+console.log(bombs);                   
+//creazione prima tabella
 let inside=document.querySelector('.square');
 for (let index = 1; index <=100; index++) {
     let element=document.createElement('div');
     element.innerHTML=index;
     element.addEventListener('click',function(){
-        let number=element.innerHTML;
-        console.log(number);
-        element.classList.add('checked');
+        let number=parseInt(element.innerHTML);
+        if(bombs.includes(number)){
+            element.classList.add('bomb');
+        }else{
+            console.log(number);
+            element.classList.add('checked');
+        }
     });
     inside.append(element);
     element.classList.add('square10');
-    
 }
+
 
 //functions
 function Difficulty(level){
