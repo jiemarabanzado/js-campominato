@@ -124,6 +124,7 @@ function Checking(){
 
 //funzione con la difficolta nuova
 function Difficulty(level){
+    document.getElementById('points').style.display='none';
     punteggio=0;
     bombs=[]
     for (let index = 0; index < 16; index++) {
