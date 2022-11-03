@@ -10,7 +10,6 @@ for (let index = 0; index < 16; index++) {
             isIn=true;
         }else{
             bombs.push(randomNum);
-            console.log(randomNum);
             isIn=false;
         }   
     }    
@@ -60,7 +59,6 @@ function Difficulty(level){
                 isIn=true;
             }else{
                 bombs.push(randomNum);
-                console.log(randomNum);
                 isIn=false;
             }   
         }    
