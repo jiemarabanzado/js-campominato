@@ -35,14 +35,12 @@ function Vittoria(punti){
     if(liv==100){
         let hide=document.querySelectorAll('.square10');
         for (let index = 0; index < hide.length; index++) {
-            hide[index].removeEventListener('click',Checking);
-            
+            hide[index].removeEventListener('click',Checking);        
         }
     }else if(liv==81){
         let hide=document.querySelectorAll('.square9');
         for (let index = 0; index < hide.length; index++) {
-            hide[index].removeEventListener('click',Checking);
-            
+            hide[index].removeEventListener('click',Checking);      
         }
     }else {
         let hide=document.querySelectorAll('.square7');
@@ -50,8 +48,7 @@ function Vittoria(punti){
             hide[index].removeEventListener('click',Checking);
             
         }
-    }
-        
+    }      
 }
 //comportamento in caso di sconfitta 
 function Sconfitta(punti){
@@ -62,19 +59,27 @@ function Sconfitta(punti){
         let hide=document.querySelectorAll('.square10');
         for (let index = 0; index < hide.length; index++) {
             hide[index].removeEventListener('click',Checking);
+            if(bombs.includes(parseInt(hide[index].innerHTML))){
+                hide[index].classList.add('bomb');
+            }
         }
     }else if(liv==81){
         let hide=document.querySelectorAll('.square9');
         for (let index = 0; index < hide.length; index++) {
             hide[index].removeEventListener('click',Checking);
+            if(bombs.includes(parseInt(hide[index].innerHTML))){
+                hide[index].classList.add('bomb');
+            }
         }
     }else{
         let hide=document.querySelectorAll('.square7');
         for (let index = 0; index < hide.length; index++) {
             hide[index].removeEventListener('click',Checking);
+            if(bombs.includes(parseInt(hide[index].innerHTML))){
+                hide[index].classList.add('bomb');
+            }
         }
-    }
-        
+    }     
 }
 //impedire all'utente di premere 2 volte la stessa casella
 function RemoveSingleEvent(num){
