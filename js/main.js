@@ -14,28 +14,14 @@ for (let index = 0; index < 16; index++) {
             isIn=false;
         }   
     }    
-}
-console.log(bombs); 
+} 
 let fun;                  
 //creazione prima tabella
 let inside=document.querySelector('.square');
 for (let index = 1; index <=100; index++) {
     let element=document.createElement('div');
     element.innerHTML=index;
-    element.addEventListener('click', Checking) /*function(){
-        let number=parseInt(element.innerHTML);
-        if(bombs.includes(number)){
-            element.classList.add('bomb');
-            Sconfitta(punteggio);
-        }else{
-            punteggio+=1;
-            console.log(number);
-            element.classList.add('checked');
-            if(punteggio==(100-16)){
-                Vittoria(punteggio);
-            }
-        }
-    });*/
+    element.addEventListener('click', Checking);
     inside.append(element);
     element.classList.add('square10');
 }
@@ -122,7 +108,6 @@ function Checking(){
     }else{
         punteggio+=1;
         RemoveSingleEvent(number);
-        console.log(punteggio);
         this.classList.add('checked');
         if(punteggio==(liv-16)){
             Vittoria(punteggio);
@@ -134,7 +119,6 @@ function Checking(){
 function Difficulty(level){
     punteggio=0;
     bombs=[]
-    console.log(bombs)
     for (let index = 0; index < 16; index++) {
         let isIn=true
         while(isIn){
@@ -147,25 +131,11 @@ function Difficulty(level){
             }   
         }    
     }
-    console.log(bombs)
     inside.innerHTML='';
     for (let index = 1; index <=level; index++) {
         let element=document.createElement('div');
         element.innerHTML=index;
-        element.addEventListener('click', Checking)/*function(){
-            let number=parseInt(element.innerHTML);
-        if(bombs.includes(number)){
-            element.classList.add('bomb');
-            Sconfitta(punteggio);
-        }else{
-            punteggio+=1;
-            console.log(number);
-            element.classList.add('checked');
-            if(punteggio==(100-16)){
-                Vittoria(punteggio);
-            }
-        }
-        });*/
+        element.addEventListener('click', Checking)
         inside.append(element);
         if(level==100){
             element.classList.add('square10');    
