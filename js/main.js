@@ -46,7 +46,7 @@ function Sconfitta(punti){
     alert('hai perso');
     document.getElementById('risultato').innerHTML=`hai perso punti=${punti}`;
 }
-
+//funzione con la difficolta nuova
 function Difficulty(level){
     punteggio=0;
     bombs=[]
@@ -63,6 +63,7 @@ function Difficulty(level){
             }   
         }    
     }
+    console.log(bombs)
     inside.innerHTML='';
     for (let index = 1; index <=level; index++) {
         let element=document.createElement('div');
@@ -92,6 +93,7 @@ function Difficulty(level){
         }
     }
 }
+//cambio difficolta
 let choose=document.getElementById('GetDifficulty').addEventListener('click',function(){
     let choice=document.getElementById('difficulty').value;
     document.getElementById('choice').style.display='none';
