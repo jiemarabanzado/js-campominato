@@ -14,6 +14,9 @@
     flex-wrap: wrap;
     margin-right: 470px;
     margin-left: 70px;
+    background-color:lightgray;
+    color: lightgray;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 .container{
     max-width: calc(100% - 20px);
@@ -74,10 +77,12 @@ header{
     right: 0;
 }
 .checked{
-    background-color: aqua;
+    background-color:#7fffd4;
+    color:#7fffd4;
 }
 .bomb{
     background-color: red;
+    color: red;
 }
 .head-title{
     align-items: center;
