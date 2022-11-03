@@ -14,13 +14,14 @@ for (let index = 0; index < 16; index++) {
         }   
     }    
 }
-console.log(bombs);                   
+console.log(bombs); 
+let fun;                  
 //creazione prima tabella
 let inside=document.querySelector('.square');
 for (let index = 1; index <=100; index++) {
     let element=document.createElement('div');
     element.innerHTML=index;
-    element.addEventListener('click',function(){
+    element.addEventListener('click', function(){
         let number=parseInt(element.innerHTML);
         if(bombs.includes(number)){
             element.classList.add('bomb');
@@ -45,6 +46,7 @@ function Vittoria(punti){
 function Sconfitta(punti){
     alert('hai perso');
     document.getElementById('risultato').innerHTML=`hai perso punti=${punti}`;
+
 }
 //funzione con la difficolta nuova
 function Difficulty(level){
