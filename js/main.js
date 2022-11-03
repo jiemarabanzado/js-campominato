@@ -157,7 +157,7 @@ function Difficulty(level){
 //cambio difficolta
 let choose=document.getElementById('GetDifficulty').addEventListener('click',function(){
     let choice=document.getElementById('difficulty').value;
-    document.getElementById('choice').style.display='none';
+    //document.getElementById('choice').style.display='none';
     if(choice=='Easy'){
         liv=100;
         Difficulty(liv);
