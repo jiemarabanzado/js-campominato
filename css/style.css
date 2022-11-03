@@ -6,22 +6,22 @@
 .row{
     display: flex;
 }
-body{
-    display: flex;
-    flex-direction: column;
-}
-main{
-    background-color: #7fffd4;
-    flex-grow: 1;
-    padding: 100px;
-}
 .square{
     width: 500px;
     height: 500px;
-    margin: auto;
     display: flex;
     flex-wrap: wrap;
+    margin-right: 470px;
+    margin-left: 70px;
 }
+.container{
+    max-width: calc(100% - 20px);
+    margin: auto;
+    justify-content: flex-end;
+}
+
+/*utilities------------
+------------*/
 .square10{
     width: calc(100%/10);
     height: calc(100%/10);
@@ -46,6 +46,21 @@ main{
     justify-content: center;
     align-items: center;
 }
+main{
+    background-color: #7fffd4;
+    padding-top: 120px;
+    height: 100vh;
+}
+footer{
+    height: 60px;
+    padding: 10px;
+    align-items: center;
+    position: fixed;
+    background-color: white;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
 .head{
     align-items: center;
     justify-content: space-between;
@@ -62,4 +77,30 @@ header{
 }
 .bomb{
     background-color: red;
+}
+.head-title{
+    align-items: center;
+}
+#logo{
+    width: 40px;
+    margin-right: 10px;
+}
+
+#points{
+    width: 400px;
+    border: 1 solid black;
+    text-align: center;
+    padding-top: 30px;
+    display: none;
+
+}
+#announce{
+    font-size: 4rem;
+    margin-bottom: 50px;
+}
+#tot{
+    font-size: 1.5rem;
+}
+#number{
+    font-size: 4rem;
 }

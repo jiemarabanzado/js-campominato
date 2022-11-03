@@ -29,8 +29,9 @@ for (let index = 1; index <=100; index++) {
 
 //comportamento in caso di vittoria
 function Vittoria(punti){
-    alert('hai vinto');
-    document.getElementById('risultato').innerHTML=`hai vinto punti=${punti}`;
+    document.getElementById('points').style.display='block';
+    document.getElementById('announce').innerHTML='Hai Vinto!!';
+    document.getElementById('number').innerHTML=punteggio;
     if(liv==100){
         let hide=document.querySelectorAll('.square10');
         for (let index = 0; index < hide.length; index++) {
@@ -54,8 +55,9 @@ function Vittoria(punti){
 }
 //comportamento in caso di sconfitta 
 function Sconfitta(punti){
-    alert('hai perso');
-    document.getElementById('risultato').innerHTML=`hai perso punti=${punti}`;
+    document.getElementById('points').style.display='block';
+    document.getElementById('announce').innerHTML='Hai Perso!!';
+    document.getElementById('number').innerHTML=punteggio;
     if(liv==100){
         let hide=document.querySelectorAll('.square10');
         for (let index = 0; index < hide.length; index++) {
