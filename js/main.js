@@ -2,6 +2,7 @@
 //creazione primi 16 numeri
 let punteggio=0;
 let bombs=[];
+let liv=100;
 for (let index = 0; index < 16; index++) {
     let isIn=true
     while(isIn){
@@ -44,31 +45,74 @@ for (let index = 1; index <=100; index++) {
 function Vittoria(punti){
     alert('hai vinto');
     document.getElementById('risultato').innerHTML=`hai vinto punti=${punti}`;
-    let hide=document.querySelectorAll('.square10');
-    for (let index = 0; index < hide.length; index++) {
-        hide[index].removeEventListener('click',Checking);
-        
+    if(liv==100){
+        let hide=document.querySelectorAll('.square10');
+        for (let index = 0; index < hide.length; index++) {
+            hide[index].removeEventListener('click',Checking);
+            
+        }
+    }else if(liv==81){
+        let hide=document.querySelectorAll('.square9');
+        for (let index = 0; index < hide.length; index++) {
+            hide[index].removeEventListener('click',Checking);
+            
+        }
+    }else {
+        let hide=document.querySelectorAll('.square7');
+        for (let index = 0; index < hide.length; index++) {
+            hide[index].removeEventListener('click',Checking);
+            
+        }
     }
+        
 }
 //comportamento in caso di sconfitta 
 function Sconfitta(punti){
     alert('hai perso');
     document.getElementById('risultato').innerHTML=`hai perso punti=${punti}`;
-    let hide=document.querySelectorAll('.square10');
-    for (let index = 0; index < hide.length; index++) {
-        hide[index].removeEventListener('click',Checking);
-        
+    if(liv==100){
+        let hide=document.querySelectorAll('.square10');
+        for (let index = 0; index < hide.length; index++) {
+            hide[index].removeEventListener('click',Checking);
+        }
+    }else if(liv==81){
+        let hide=document.querySelectorAll('.square9');
+        for (let index = 0; index < hide.length; index++) {
+            hide[index].removeEventListener('click',Checking);
+        }
+    }else{
+        let hide=document.querySelectorAll('.square7');
+        for (let index = 0; index < hide.length; index++) {
+            hide[index].removeEventListener('click',Checking);
+        }
     }
+        
 }
 //impedire all'utente di premere 2 volte la stessa casella
 function RemoveSingleEvent(num){
-    let hide=document.querySelectorAll('.square10');
-    for (let index = 0; index < hide.length; index++) {
-        if(parseInt(hide[index].innerHTML)==num){
-            hide[index].removeEventListener('click',Checking);
+    if(liv==100){
+        let hide=document.querySelectorAll('.square10');
+        for (let index = 0; index < hide.length; index++) {
+            if(parseInt(hide[index].innerHTML)==num){
+                hide[index].removeEventListener('click',Checking);
+            }    
+        }
+    }else if(liv==81){
+        let hide=document.querySelectorAll('.square9');
+        for (let index = 0; index < hide.length; index++) {
+            if(parseInt(hide[index].innerHTML)==num){
+                hide[index].removeEventListener('click',Checking);
+            } 
+        }
+    }else{
+        let hide=document.querySelectorAll('.square7');
+        for (let index = 0; index < hide.length; index++) {
+            if(parseInt(hide[index].innerHTML)==num){
+                hide[index].removeEventListener('click',Checking);
+            } 
         }    
     }
-}
+}   
 //funzione per la selezione dei numeri
 function Checking(){
     let number=parseInt(this.innerHTML);
@@ -80,7 +124,7 @@ function Checking(){
         RemoveSingleEvent(number);
         console.log(punteggio);
         this.classList.add('checked');
-        if(punteggio==(100-16)){
+        if(punteggio==(liv-16)){
             Vittoria(punteggio);
         }
     }
@@ -108,7 +152,7 @@ function Difficulty(level){
     for (let index = 1; index <=level; index++) {
         let element=document.createElement('div');
         element.innerHTML=index;
-        element.addEventListener('click', function(){
+        element.addEventListener('click', Checking)/*function(){
             let number=parseInt(element.innerHTML);
         if(bombs.includes(number)){
             element.classList.add('bomb');
@@ -121,7 +165,7 @@ function Difficulty(level){
                 Vittoria(punteggio);
             }
         }
-        });
+        });*/
         inside.append(element);
         if(level==100){
             element.classList.add('square10');    
@@ -138,13 +182,13 @@ let choose=document.getElementById('GetDifficulty').addEventListener('click',fun
     let choice=document.getElementById('difficulty').value;
     document.getElementById('choice').style.display='none';
     if(choice=='Easy'){
-        choice=100;
-        Difficulty(choice);
+        liv=100;
+        Difficulty(liv);
     }else if(choice=='Normal'){
-        choice=81;
-        Difficulty(choice);
+        liv=81;
+        Difficulty(liv);
     }else{
-        choice=49;
-        Difficulty(choice);
+        liv=49;
+        Difficulty(liv);
     }
 });
